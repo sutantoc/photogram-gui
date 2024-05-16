@@ -9,4 +9,5 @@ post("/modify_user/:user_id", { :controller => "users", :action => "modify" })
 
 get("/photos", { :controller => "photos", :action => "index"})
 post("/post_photo", { :controller => "photos", :action => "create" })
+get("/photos/:photo_id", { :controller => "photos", :action => "show" })
 end
