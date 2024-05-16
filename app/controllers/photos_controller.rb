@@ -13,7 +13,7 @@ class PhotosController < ApplicationController
     p.owner_id = params.fetch("owner_id_input")
     p.save
 
-    redirect_to("/photos")
+    redirect_to("/photos/#{p.id}")
   end
 
   def show

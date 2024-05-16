@@ -15,7 +15,7 @@
       <label for="new_image">Image</label>
       <input id="new_image" type="text" name="new_image" value="<%= @the_photo.image %>">
       <label for="new_caption">Caption</label>
-      <input id="new_caption" type="text" name="new_caption" value="<%= @the_photo.caption %>">
+      <textarea id="new_caption" type="text" name="new_caption" value="<%= @the_photo.caption %>"></textarea>
       <button>Update photo</button>
     </form>
   </dd>
@@ -51,6 +51,6 @@
   <label for="author_id_input">Author ID</label>
   <input id="author_id_input" type="text" name="author_id_input" placeholder="Enter your author ID">
   <label for="comment_input">Comment</label>
-  <input id="comment_input" type="text" name="comment_input" placeholder="Enter a comment...">
+  <textarea id="comment_input" type="text" name="comment_input" placeholder="Enter a comment..."></textarea>
   <button>Add comment</button>
 </form>

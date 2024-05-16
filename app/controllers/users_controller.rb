@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     u.username = params.fetch("input_username")
     u.save
 
-    redirect_to("/users")
+    redirect_to("/users/#{u.username}")
   end
 
   def show
