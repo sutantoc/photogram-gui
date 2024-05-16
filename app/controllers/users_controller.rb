@@ -21,7 +21,18 @@ class UsersController < ApplicationController
 
     user_photos = @the_user.own_photos.all
     @list_of_photos = user_photos.order({ :posted => :desc })
-    
+
     render({ :template => "user_templates/show" })
+  end
+
+  def modify
+    user_id = params.fetch("user_id")
+    matching_user = User.where({ :id => user_id })
+    the_user = matching_user.at(0)
+
+    the_user.username = params.fetch("new_username")
+    the_user.save
+
+    redirect_to("/users/#{the_user.username}")
   end
 end
