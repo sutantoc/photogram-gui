@@ -26,4 +26,16 @@ class PhotosController < ApplicationController
 
     render({ :template => "photo_templates/show" })
   end
+
+  def modify
+    p_id = params.fetch("photo_id")
+    matching_photos = Photo.where({ :id => p_id})
+    the_photo = matching_photos.at(0)
+
+    the_photo.image = params.fetch("new_image")
+    the_photo.caption = params.fetch("new_caption")
+    the_photo.save
+
+    redirect_to("/photos/#{the_photo.id}")
+  end
 end
