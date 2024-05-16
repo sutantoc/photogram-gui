@@ -47,4 +47,14 @@ class PhotosController < ApplicationController
     the_photo.destroy
     redirect_to("/photos")
   end
+
+  def comment
+    c = Comment.new
+    c.photo_id = params.fetch("photo_id_input")
+    c.body = params.fetch("comment_input")
+    c.author_id = params.fetch("author_id_input")
+    c.save
+
+    redirect_to("/photos/#{c.photo_id}")
+  end
 end

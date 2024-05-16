@@ -12,5 +12,6 @@ post("/post_photo", { :controller => "photos", :action => "create" })
 get("/photos/:photo_id", { :controller => "photos", :action => "show" })
 post("/update_photo/:photo_id", { :controller => "photos", :action => "modify" })
 get("/delete_photo/:photo_id", { :controller => "photos", :action => "delete" })
+post("/add_comment", { :controller => "photos", :action => "comment" })
 
 end
