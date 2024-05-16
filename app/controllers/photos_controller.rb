@@ -6,4 +6,13 @@ class PhotosController < ApplicationController
     render({ :template => "/photo_templates/index" })
   end
 
+  def create
+    p = Photo.new
+    p.image = params.fetch("image_input")
+    p.caption = params.fetch("caption_input")
+    p.owner_id = params.fetch("owner_id_input")
+    p.save
+
+    redirect_to("/photos")
+  end
 end
